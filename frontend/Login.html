@@ -3,7 +3,12 @@
 
 
 <p>Please login:</p>
- <script src="submit.js"></script> 
+ <script type = "text/javascript">
+    function randomAccNoGenerator() {
+        let accNo = Math.floor(1000 + Math.random() * 9000);
+        return(accNo);
+    }
+ </script> 
 <form action="/action_page.php">
   <fieldset>
     <legend>Credentials:</legend>
@@ -14,7 +19,7 @@
     <input type="text" id="phone" value="8735067571">
     <br>
      Bank Account no:<br>
-    <input type="text" id="accno" value=randomAccNoGenerator() minlength="4" maxlength="4">
+    <input type="text" id="accno" onclick="this.value=randomAccNoGenerator()" minlength="4" maxlength="4">
     <br>
     Pin:<br>
     <input type="password" id="pin" minlength="4" maxlength="4">
