@@ -3,17 +3,18 @@
 
 
 <p>Please login:</p>
+ <script src="submit.js"></script> 
 <form action="/action_page.php">
   <fieldset>
     <legend>Credentials:</legend>
     Name:<br>
-    <input type="text" id="name">
+    <input type="text" id="name" value="Viral Jain">
     <br>
     Phone:<br>
-    <input type="text" id="phone">
+    <input type="text" id="phone" value="8735067571">
     <br>
      Bank Account no:<br>
-    <input type="text" id="accno" value=randomAccNoGenerator()>
+    <input type="text" id="accno" value=randomAccNoGenerator() minlength="4" maxlength="4">
     <br>
     Pin:<br>
     <input type="password" id="pin" minlength="4" maxlength="4">
