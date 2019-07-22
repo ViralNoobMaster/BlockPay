@@ -1,5 +1,7 @@
 from flask import Flask, request, render_template
 
+from customerChain import *
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -8,12 +10,16 @@ def Login():
 
 @app.route('/', methods=['GET', 'POST'])
 
-def getvalue():
-    name = request.form['name']
-    processed_text=name.upper()
-    return processed_text 
 
+def getvalue():
+    global name,phone,accNo,pin,userInfo
+    name = request.form['name']
+    phone = request.form['phone']
+    accNo = request.form['accNo']
+    pin = request.form['pin']
+    userInfo = [name,phone,accNo,pin]
+    return hashing(userInfo)
 
 if __name__ == "__main__":
 	app.run(debug=True)
-
+	
