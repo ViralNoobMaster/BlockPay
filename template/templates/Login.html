@@ -1,0 +1,44 @@
+<html>
+<body>
+
+
+<p>Please login:</p>
+
+ <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous" type = "text/javascript">
+            function randomAccNoGenerator() {
+                let accNo = Math.floor(1000 + Math.random() * 9000);
+                return(accNo);
+    }
+            
+ </script> 
+ <script type="text/python" src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+  function goPython(){
+            $.ajax({
+              url: "parsing.py",
+             context: document.body
+            }).done(function() {
+             alert('finished python script');;
+            });
+        }</script>
+<form name="registration" action="." method="post">
+  <fieldset>
+    <legend>Credentials:</legend>
+    Name:<br>
+    <input type="text" id="name" name="name">
+    <br>
+    Phone:<br>
+    <input type="text" id="phone" name="phone">
+    <br>
+     Bank Account no:<br>
+    <input type="text" id="accno" onclick="this.value=randomAccNoGenerator()" minlength="4" maxlength="4" name="accNo">
+    <br>
+    Pin:<br>
+    <input type="password" id="pin" minlength="4" maxlength="4" name="pin">
+    <br><br>
+    <button name="button" value="runScript" onclick="goPython()">Submit</button>
+
+  </fieldset>
+</form>
+
+</body>
+</html>
