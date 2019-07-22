@@ -9,15 +9,17 @@
                 let accNo = Math.floor(1000 + Math.random() * 9000);
                 return(accNo);
     }
-            function goPython(){
+            
+ </script> 
+ <script type="text/python" src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous">
+  function goPython(){
             $.ajax({
               url: "parsing.py",
              context: document.body
             }).done(function() {
              alert('finished python script');;
             });
-        }
- </script> 
+        }</script>
 <form name="registration" action="." method="post">
   <fieldset>
     <legend>Credentials:</legend>

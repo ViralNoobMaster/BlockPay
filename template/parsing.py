@@ -3,16 +3,17 @@ from flask import Flask, request, render_template
 app = Flask(__name__)
 
 @app.route('/')
-def my_form():
+def Login():
     return render_template('Login.html')
 
-@app.route('/', methods=['POST'])
-def my_form_post():
+@app.route('/', methods=['GET', 'POST'])
+
+def getvalue():
     name = request.form['name']
     processed_text=name.upper()
-    print(processed_text)
+    return processed_text 
 
 
 if __name__ == "__main__":
-    app.run()
+	app.run(debug=True)
 
