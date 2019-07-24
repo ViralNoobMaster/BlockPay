@@ -5,6 +5,10 @@ from customerChain import *
 app = Flask(__name__)
 
 @app.route('/')
+def function():
+	return render_template('Index.html')
+
+@app.route('/Login.html')
 def Login():
     return render_template('Login.html')
 
